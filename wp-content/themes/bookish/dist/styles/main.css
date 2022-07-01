@@ -18734,11 +18734,6 @@ readers do not read off random characters that represent icons */
   margin-bottom: auto;
 }
 
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 .mb-14 {
   margin-bottom: 3.5rem;
 }
@@ -18839,10 +18834,6 @@ readers do not read off random characters that represent icons */
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .items-center {
   align-items: center;
 }
@@ -18879,11 +18870,6 @@ readers do not read off random characters that represent icons */
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: hsl(47 100% 68% / var(--tw-bg-opacity));
 }
 
 .fill-current {
@@ -18930,10 +18916,6 @@ readers do not read off random characters that represent icons */
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
 }
 
 .pr-8 {

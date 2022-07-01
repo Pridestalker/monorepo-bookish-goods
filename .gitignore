@@ -1,3 +1,4 @@
+.env
 vendor
 wp-admin
 wp-includes
@@ -8,3 +9,17 @@ wp-content/uploads
 wp-content/wflogs
 wp-content/wp-rocket-config
 wp-content/advanced-cache.php
+wp-config.php
+wp-content/mu-plugins
+!wp-content/mu-plugins/add-paypal-surcharge.php
+!wp-content/mu-plugins/custom-related-products.php
+!wp-content/mu-plugins/force-shipping-methods.php
+!wp-content/mu-plugins/matomo-tracking.php
+wp-content
+wp-content/themes/bookish/node_modules/
+wp-content/themes/bookish/vendor/
+!wp-content/themes/bookish/assets/scripts/vendor
+.htaccess
+db.php
+object-cache
+movefile.yml
