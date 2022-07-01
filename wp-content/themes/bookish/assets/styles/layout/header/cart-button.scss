@@ -1,0 +1,63 @@
+@use 'assets/styles/abstracts/variables/colors';
+@use 'sass:color' as sc;
+
+.shopping-cart-button {
+  border: 1px solid colors.$primary;
+  color: colors.$primary;
+  border-radius: .5rem;
+  position: relative;
+  padding: .5rem 1.25rem;
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  transition: border-radius .2s ease-out;
+  overflow: hidden;
+
+  & .bulb {
+    position: absolute;
+    bottom: -.5rem;
+    left: -.5rem;
+    background: colors.$primary;
+    color: colors.$white;
+    border-radius: 50%;
+    font-size: 70%;
+    padding: .3rem .5rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    color: colors.$white;
+
+    &::before {
+      transform: none;
+    }
+  }
+
+  &::before {
+    background-color: colors.$primary;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: translateY(-125%) rotate(15deg);
+    border-radius: inherit;
+    transition: transform 0.3s ease-out;
+  }
+
+  &::after {
+    background-color: colors.$primary;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: translateY(125%) rotate(15deg);
+    border-radius: inherit;
+    transition: transform 0.3s ease-out;
+  }
+}

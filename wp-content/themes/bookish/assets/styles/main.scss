@@ -1,0 +1,12 @@
+@use "~tailwindcss/base";
+
+@use "~tailwindcss/components";
+
+@use "abstracts";
+@use "base" as *;
+@use "components" as *;
+@use "layout" as *;
+@use "pages" as *;
+@use "vendors" as *;
+
+@use '~tailwindcss/utilities';

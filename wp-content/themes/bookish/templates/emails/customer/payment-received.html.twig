@@ -1,0 +1,111 @@
+{% extends 'emails/woocommerce.html.twig' %}
+
+{% block content %}
+    <p>
+        Beste {{ order.get_billing_first_name }},
+    </p>
+
+    <p>
+        Bedankt voor het betalen van bestelling met bestelnummer {{ order.get_order_number }}!
+        Nu jouw betaling is ontvangen ga ik je bestelling klaar maken voor verzending.
+    </p>
+
+    <!-- Ordered products -->
+    {% embed 'emails/components/table.html.twig' %}
+        {% block content %}
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Aantal
+                </th>
+                <th>
+                    Prijs
+                </th>
+            </tr>
+            {% for product in order.get_items %}
+                <tr>
+                    <td>
+                        {{ product.get_name }}
+                    </td>
+                    <td>
+                        {{ product.qty }}
+                    </td>
+                    <td>
+                        {{ fn('wc_price', product.get_subtotal) }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <th class="body-header">
+                    Verzending:
+                </th>
+                <td>
+                    {{ order.get_shipping_method }}
+                </td>
+                <td>
+                    {{ fn('wc_price', order.get_shipping_total) }}
+                </td>
+            </tr>
+            <tr>
+                <th class="body-header">
+                    Totaal
+                </th>
+                <td></td>
+                <td>{{ fn('wc_price', order.get_total) }}</td>
+            </tr>
+        {% endblock %}
+    {% endembed %}
+
+    <!-- Address details -->
+    {% embed 'emails/components/columns.html.twig' %}
+        {% block main %}
+            {% embed 'emails/components/panel.html.twig' with { 'type': 'gray' } %}
+                {% block content %}
+                    <h2>Factuuradres</h2>
+
+                    <p>
+                        {% if order.get_billing_company|length > 0 %}
+                            {{ order.get_billing_company }}<br />
+                        {% endif %}
+                        {{ order.get_billing_first_name }} {{ order.get_billing_last_name }}<br />
+                        {{ order.get_billing_address_1 }}<br />
+                        {{ order.get_billing_postcode }} {{ order.get_billing_city }}
+                    </p>
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+        {% block aside %}
+            {% embed 'emails/components/panel.html.twig' with { 'type': 'gray' } %}
+                {% block content %}
+                    <h2>Verzendadres</h2>
+
+                    <p>
+                        {% if order.get_shipping_company|length > 0 %}
+                            {{ order.get_shipping_company }}<br />
+                        {% endif %}
+                        {{ order.get_shipping_first_name }} {{ order.get_shipping_last_name }}<br />
+                        {{ order.get_shipping_address_1 }}<br />
+                        {{ order.get_shipping_postcode }} {{ order.get_shipping_city }}
+                    </p>
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+
+    <p></p>
+    <p>
+        Veel leesplezier,<br /><br />
+
+        Bookish Goods<br />
+        <em>Mandy</em>
+    </p>
+{% endblock %}
+
+{% block subcopy %}
+    <p>
+        Ik wens je alvast heel veel plezier met je aankoop en hoop je snel nog eens van dienst te kunnen zijn.
+    </p>
+{% endblock %}

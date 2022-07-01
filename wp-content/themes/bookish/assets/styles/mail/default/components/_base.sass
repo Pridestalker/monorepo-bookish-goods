@@ -1,0 +1,34 @@
+@use '../variables' as v
+
+//noinspection Stylelint
+body,
+body *:not(html):not(style):not(br):not(tr):not(code)
+    font-family: v.$font-family
+    box-sizing: border-box
+
+body
+    background-color: v.$gray
+    color: v.$black
+    height: 100%
+    hyphens: auto
+    line-height: 1.4
+    margin: 0
+    -moz-hyphens: auto
+    -ms-word-break: break-all
+    width: 100% !important
+    -webkit-hyphens: auto
+    -webkit-text-size-adjust: none
+    word-break: break-all
+    word-break: break-word
+
+p,
+ul,
+ol,
+blockquote
+    line-height: 1.4
+    text-align: left
+
+a
+    color: map-get(v.$colors, 'primary')
+    img
+        border: none

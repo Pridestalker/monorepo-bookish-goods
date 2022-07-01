@@ -1,0 +1,47 @@
+<div class="woocommerce-shipping-fields">
+    {% if cart.needs_shipping_address %}
+        <p id="ship-to-different-address">
+            <input
+                type="checkbox"
+                id="ship-to-different-address-checkbox"
+                class="woocommerce-form__input woocommerce-form__input-checkbox"
+                name="ship_to_different_address"
+                value="1"
+                {% if shipping_checked %}checked{% endif %}
+            >
+            <label for="ship-to-different-address-checkbox">
+                {{ __('Ship to a different address?', 'woocommerce') }}
+            </label>
+        </p>
+
+        <div class="shipping_address">
+            {% do action('woocommerce_before_checkout_shipping_form', checkout) %}
+
+            <div class="woocommerce-shipping-fields__field-wrapper">
+                {% for key, field in checkout.get_checkout_fields('shipping') %}
+                    {{ fn('woocommerce_form_field', key, field, checkout.get_value(key)) }}
+                {% endfor %}
+            </div>
+
+            {% do action('woocommerce_after_checkout_shipping_form', checkout) %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="woocommerce-additional-fields my-4">
+    {% do action('woocommerce_before_order_notes', checkout) %}
+
+    {% if notes_enabled %}
+        <h3>
+            {{ __('Additional information', 'woocommerce') }}
+        </h3>
+
+        <div class="woocommerce-additional-fields__field-wrapper">
+            {% for key, field in checkout.get_checkout_fields('order') %}
+                {{ fn('woocommerce_form_field', key, field, checkout.get_value(key)) }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% do action('woocommerce_after_order_notes') %}
+</div>

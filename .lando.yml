@@ -1,0 +1,9 @@
+name: bookishgoods
+recipe: wordpress
+config:
+  webroot: .
+  php: '8.0'
+
+services:
+  redis:
+    type: redis

@@ -1,0 +1,36 @@
+<div class="woocommerce-billing-fields">
+    <h3>{{ __('Billing details', 'woocommerce') }}</h3>
+
+    {% do action('woocommerce_before_checkout_billing_form', checkout) %}
+
+    <div class="woocommerce-billing-fields__field-wrapper">
+        {% for key, field in checkout.get_checkout_fields('billing') %}
+            {{ fn('woocommerce_form_field', key, field, checkout.get_value(key)) }}
+        {% endfor %}
+    </div>
+    {% do action('woocommerce_after_checkout_billing_form', checkout) %}
+</div>
+
+{% if not is_user_logged_in and checkout.is_registration_enabled %}
+    <div class="woocommerce-account-fields">
+        {% do action('woocommerce_before_checkout_registration_form', checkout) %}
+
+        {% if checkout.get_checkout_fields('account') %}
+
+            <p class="form-row form-row-wide">
+                <input class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" id="createaccount" {{ checkout.get_value('createaccount') ? 'checked' : ''  }} type="checkbox" name="createaccount" value="1" />
+                <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox" for="createaccount">
+                    Account aanmaken?
+                </label>
+            </p>
+
+            <div class="create-account" style="display: none;">
+                {% for key, field in checkout.get_checkout_fields('account') %}
+                    {{ fn('woocommerce_form_field', key, field, checkout.get_value(key)) }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% do action('woocommerce_after_checkout_registration_form', checkout) %}
+    </div>
+{% endif %}

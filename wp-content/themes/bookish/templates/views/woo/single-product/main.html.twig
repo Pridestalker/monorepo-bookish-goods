@@ -1,0 +1,143 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <main class="">
+        {% do action('woocommerce_before_single_product') %}
+
+        {% do action('bookish/template/product/before-content', product) %}
+
+        {% do action('bookish/template/product/content', product) %}
+
+        {% do action('bookish/template/product/after-content', product) %}
+
+        <div hidden class="container mx-auto">
+            <section class="main-content py-4">
+                <div>
+                    {% block productGallery %}
+                        <bookish-gallery selected="thumbnail">
+                            <bookish-gallery-item name="thumbnail"
+                                                  src="{{ product.thumbnail.src|resize(900,900) }}"
+                                                  modern_src="{{ product.thumbnail|resize(900, 900)|towebp }}"
+                                                  alt="{{ product.get_title }}"></bookish-gallery-item>
+                            {% for item in product.gallery_items %}
+                                {% set gallery_item = Image(item) %}
+                                {{ gallery_item.slug }}
+                                <bookish-gallery-item name="gallery-{{ loop.index }}"
+                                                      src="{{ gallery_item.src|resize(900,900) }}"
+                                                      modern_src="{{ gallery_item.src|resize(900, 900)|towebp }}"
+                                                      alt="{{ gallery_item.alt }}"></bookish-gallery-item>
+                            {% endfor %}
+                        </bookish-gallery>
+                        <noscript>
+                            <img src="{{ product.thumbnail.src|resize(900,900) }}" alt="{{ product.get_title }}"/>
+                        </noscript>
+                    {% endblock %}
+                </div>
+
+                <aside class="product-sidebar">
+                    <h2 class="product-price">
+                        {% block productPrice %}
+                            {% if product.is_on_sale %}
+                                <small class="mr-2"
+                                       style="text-decoration: line-through;">{{ product.get_regular_price }}</small>
+                            {% endif %}
+                            {{ product.get_price }}
+                        {% endblock %}
+
+                        {% if is_user_logged_in() %}
+                            <div class="ml-auto is-h1 text-primary">
+                                {{ get_favorites_button() }}
+                            </div>
+                        {% endif %}
+                    </h2>
+
+                    <span id="add-{{ product.get_type }}-product-to-cart"></span>
+                    <noscript>
+                        <form
+                                class="js-add-to-cart"
+                                action="{{ product.product.get_permalink|apply_filters('woocommerce_add_to_cart_form_action') }}"
+                                method="post"
+                                enctype="multipart/form-data">
+
+                            {% do action('woocommerce_before_add_to_cart_quantity') %}
+                            <input type="number"
+                                   name="quantity"
+                                   value="1"
+                                   class="w-64"
+                                   min="{{ product.product.get_min_purchase_quantity }}"
+                                   max="{{ product.product.get_max_purchase_quantity > 0 ? product.product.get_max_purchase_quantity : '' }}"/>
+
+                            {% do action('woocommerce_after_add_to_cart_quantity') %}
+
+                            {% block productAddToCart %}
+                                {% do action('woocommerce_before_add_to_cart_button') %}
+                                <button type="submit" name="add-to-cart" value="{{ product.id }}"
+                                        class="product-add-to-cart">
+                                    <i class="fad fa-plus-hexagon"></i>
+                                    <span>Toevoegen aan winkelmand</span>
+                                </button>
+                                {% do action('woocommerce_after_add_to_cart_button') %}
+                            {% endblock %}
+
+                        </form>
+                    </noscript>
+
+                    {% block productStock %}
+                        {% if product.is_pre_order() %}
+                            <p class="text-primary">
+                                <i class="fad fa-box-check mr-2"></i><span>Pre-Order, {{ product.get_field('shipment_estimate', 'verzending begin december.') }}</span>
+                            </p>
+                        {% elseif product.is_in_stock %}
+                            <p class="text-primary">
+                                <i class="fad fa-box-check mr-2"></i><span>Op voorraad! Binnen 2-4 dagen verzonden.</span>
+                            </p>
+                        {% elseif product.can_backorder %}
+                            <p>
+                                <i class="fad fa-exclamation-circle mr-2"></i><span>Tijdelijk niet op voorraad.</span>
+                            </p>
+                        {% else %}
+                            <p class="text-red">
+                                <i class="fad fa-exclamation-circle mr-2"></i><span>Niet op voorraad</span>
+                            </p>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block productUSP %}
+                        <p>
+                            <i class="fas fa-comment-check mr-2 text-green"></i>
+                            <span>
+                            <strong class="text-green">Gratis</strong> verzending vanaf &euro; 50,- in NL<br>
+                            BE vanaf &euro; 60,-
+                        </span>
+                        </p>
+                    {% endblock %}
+                </aside>
+            </section>
+        </div>
+
+        <div hidden class="container mx-auto vertical-spacing">
+            <div class="product-description content">
+                {{ product.content|wpautop|apply_filters('the_content')|apply_filters('bookish/content/product/content') }}
+
+                <p>
+                    <em>
+                        Alle producten worden handgemaakt,
+                        de print en het formaat kunnen dus iets afwijken van de foto's.
+                    </em>
+                </p>
+            </div>
+        </div>
+
+        <div hidden class="container">
+            <section class="related-products vertical-spacing">
+                <h2 class="mb-14">{{ __('Gerelateerde producten', 'bookish') }}</h2>
+
+                <div class="products-list">
+                    {% for related in product.related_products %}
+                        {% do action('bookish/template/product-card', product) %}
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

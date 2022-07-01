@@ -1,0 +1,18 @@
+@use 'assets/styles/abstracts/variables' as av;
+
+.woocommerce-message {
+  display: flex;
+  flex-direction: column;
+
+  @screen lg {
+    flex-direction: row-reverse;
+  }
+
+  .button {
+    color: av.$primary;
+    text-decoration: underline;
+    @screen lg {
+      margin-left: auto;
+    }
+  }
+}

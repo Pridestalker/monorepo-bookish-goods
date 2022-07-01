@@ -1,0 +1,14 @@
+@use '../variables' as v
+//noinspection Stylelint
+.footer
+    margin: 0 auto
+    padding: 0
+    text-align: center
+    width: v.$width
+    -premailer-cellpadding: 0
+    -premailer-cellspacing: 0
+    -premailer-width: v.$width
+    p
+        color: map-get(v.$colors, 'primary')
+        font-size: 12px
+        text-align: center

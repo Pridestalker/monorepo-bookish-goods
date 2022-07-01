@@ -1,0 +1,9 @@
+@use 'assets/styles/abstracts/variables' as av;
+
+.checkout-button,
+#place_order {
+  display: block;
+  color: av.$white;
+  background: av.$primary;
+  margin-top: 1rem;
+}

@@ -1,0 +1,13 @@
+{
+    "/scripts/main.js": "/scripts/main.js",
+    "/scripts/manifest.js": "/scripts/manifest.js",
+    "/common.js": "/common.js?id=c5c1504e7e3a4320",
+    "/header.js": "/header.js?id=79621ced4939d100",
+    "/bookish-header.js": "/bookish-header.js?id=e0496546e7eb7951",
+    "/checkout.js": "/checkout.js?id=834832dbea071dd7",
+    "/styles/admin.css": "/styles/admin.css",
+    "/styles/mail.css": "/styles/mail.css",
+    "/styles/main.css": "/styles/main.css",
+    "/scripts/vendor.js": "/scripts/vendor.js",
+    "/share.js": "/share.js?id=c95377d6c6e818ee"
+}

@@ -1,0 +1,15 @@
+<main>
+    <div class="products-wrapper">
+        <div class="products py-4">
+            {% for post_id in favorites.products %}
+                {% set _type = fn('get_post_type', post_id) %}
+                {% if _type is same as('product') %}
+                    {{ include([
+                        'partials/tease/product/' ~ product.slug ~ '.html.twig',
+                        'partials/tease/product.html.twig'
+                    ], {product: post_id|apply_filters('bookish/view/cart/product-from-id')}, with_context = false, ignore_missing = true) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</main>

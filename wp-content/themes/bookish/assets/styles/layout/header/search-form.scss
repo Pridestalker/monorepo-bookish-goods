@@ -1,0 +1,50 @@
+@use 'assets/styles/abstracts/variables/colors';
+
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  line-height: 1;
+  padding: .5rem .75rem .5rem 2.5rem;
+  border: 2px solid colors.$secondary;
+  border-radius: 50rem;
+  background: colors.$white;
+  color: colors.$primary;
+  transition: flex-grow .3s ease-in-out;
+
+  &__button {
+    position: absolute;
+    left: 1rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  &::after {
+    content: '';
+    background: rgba(0,0,0, 0.25);
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-out;
+  }
+
+  &:focus-within {
+    outline: 2px dotted colors.$secondary;
+    outline-offset: .25rem;
+    flex-grow: 1;
+    transition: flex-grow .3s ease-in-out;
+
+    &::after {
+      transition: transform 0.3s ease-in;
+      transform: none;
+    }
+  };
+}

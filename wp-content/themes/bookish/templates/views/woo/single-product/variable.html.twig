@@ -1,0 +1,47 @@
+{% extends 'views/woo/single-product/main.html.twig' %}
+
+{% block window_definitions %}
+    {{ parent() }}
+
+    <script>
+        window['acceptedAttributes'] = {{ product.get_variations|json_encode|raw }};
+        window['variations'] = {{ product.get_variation_attributes|json_encode|raw }};
+    </script>
+{% endblock %}
+
+{% block productAddToCart %}
+    {% for key, variations in product.get_variation_attributes %}
+        <div class="inline-block relative w-64">
+            <label for="{{ key }}" class="sr-only">
+                {{ key|replace({'pa_': '', '-': ' ' }) }}
+            </label>
+            <select id="{{ key }}"
+                    name="{{ key }}"
+                    data-attribute_name="attribute_{{ key }}"
+                    data-show_option_none="yes"
+                    class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            >
+                <option placeholder="">Kies een {{ key|replace({'pa_': '', '-': ' ' }) }}</option>
+                {% for option in variations %}
+                    <option value="{{ option }}">
+                        {{ option|replace({ '-': ' '})|capitalize }}
+                    </option>
+                {% endfor %}
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% do action('woocommerce_before_add_to_cart_button') %}
+    <button type="submit" name="add-to-cart" disabled value="{{ product.id }}" class="product-add-to-cart">
+        <i class="fad fa-plus-hexagon"></i>
+        <span>Toevoegen aan winkelmand</span>
+    </button>
+    {% do action('woocommerce_after_add_to_cart_button') %}
+
+    <input type="hidden" name="add-to-cart" value="{{ product.id }}">
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+    <input type="hidden" name="variation_id" value="0">
+{% endblock %}

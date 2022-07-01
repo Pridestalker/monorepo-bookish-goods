@@ -1,0 +1,59 @@
+@use '../variables' as v
+.action
+    margin: 30px auto
+    padding: 0
+    text-align: center
+    width: 100%
+
+//noinspection Stylelint
+.button
+    border-radius: 3px
+    box-shadow: 0 2px 3px scale-color(v.$black, $alpha: -84%)
+    color: v.$white
+    display: inline-block
+    text-decoration: none
+    -webkit-text-size-adjust: none
+
+    &-blue
+        background-color: v.$blue
+        border-top: 10px solid v.$blue
+        border-right: 18px solid v.$blue
+        border-bottom: 10px solid v.$blue
+        border-left: 18px solid v.$blue
+
+    &-green
+        background-color: v.$green
+        border-top: 10px solid v.$green
+        border-right: 18px solid v.$green
+        border-bottom: 10px solid v.$green
+        border-left: 18px solid v.$green
+
+    &-red
+        background-color: v.$red
+        border-top: 10px solid v.$red
+        border-right: 18px solid v.$red
+        border-bottom: 10px solid v.$red
+        border-left: 18px solid v.$red
+        color: v.$gray
+
+    &-yellow
+        background-color: v.$yellow
+        border-top: 10px solid v.$yellow
+        border-right: 18px solid v.$yellow
+        border-bottom: 10px solid v.$yellow
+        border-left: 18px solid v.$yellow
+
+    &-orange
+        background-color: v.$orange
+        border-top: 10px solid v.$orange
+        border-right: 18px solid v.$orange
+        border-bottom: 10px solid v.$orange
+        border-left: 18px solid v.$orange
+
+    &-primary
+        background-color: map-get(v.$colors, 'primary')
+        border-top: 10px solid map-get(v.$colors, 'primary')
+        border-right: 18px solid map-get(v.$colors, 'primary')
+        border-bottom: 10px solid map-get(v.$colors, 'primary')
+        border-left: 18px solid map-get(v.$colors, 'primary')
+

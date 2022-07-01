@@ -1,0 +1,36 @@
+{% extends 'emails/woocommerce.html.twig' %}
+
+{% block content %}
+    <p>
+        Beste {{ username }},
+    </p>
+
+    <p>
+        Bedankt voor het aanmaken van je account!<br />
+        Je kan inloggen met jouw gebruikersnaam: <strong>{{ username }}</strong>
+    </p>
+
+    <p>
+        {% embed 'emails/components/button.html.twig' with { 'url': account_url } %}
+            {% block content %}
+                Jouw account
+            {% endblock %}
+        {% endembed %}
+    </p>
+
+    <p></p>
+    <p>
+        Veel leesplezier,<br /><br />
+
+        Bookish Goods<br />
+        <em>Mandy</em>
+    </p>
+{% endblock %}
+
+{% block subcopy %}
+    {% if additional_content and additional_content|length > 0 %}
+        <p>
+            {{ additional_content }}
+        </p>
+    {% endif %}
+{% endblock %}

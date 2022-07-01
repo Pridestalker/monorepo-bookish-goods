@@ -1,0 +1,21 @@
+@use '../variables' as v
+//noinspection Stylelint
+.body
+    background-color: v.$white
+    border-bottom: 1px solid scale-color(v.$white, $lightness: -20%)
+    border-top: 1px solid scale-color(v.$white, $lightness: -20%)
+    margin: 0
+    padding: 0
+    width: 100%
+    -premailer-cellpadding: 0
+    -premailer-cellspacing: 0
+    -premailer-width: 100%
+
+.inner-body
+    background-color: v.$white
+    margin: 0 auto
+    padding: 0
+    width: v.$width
+    -premailer-cellpadding: 0
+    -premailer-cellspacing: 0
+    -premailer-width: v.$width

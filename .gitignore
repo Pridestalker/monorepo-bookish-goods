@@ -1,0 +1,10 @@
+vendor
+wp-admin
+wp-includes
+wp-content/ai1wm-backups
+wp-content/cache
+wp-content/plugins
+wp-content/uploads
+wp-content/wflogs
+wp-content/wp-rocket-config
+wp-content/advanced-cache.php

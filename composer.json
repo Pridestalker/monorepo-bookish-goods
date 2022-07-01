@@ -1,0 +1,69 @@
+{
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ],
+            "wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wordpress-install-dir": "./"
+        }
+    },
+    "require": {
+        "composer/installers": "^2.1",
+        "wpackagist-plugin/duplicate-post": "^4.4",
+        "wpackagist-plugin/facebook-for-woocommerce": "^2.6",
+        "wpackagist-plugin/google-authenticator": "^0.53.0",
+        "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25",
+        "wpackagist-plugin/mailchimp-for-woocommerce": "^2.6",
+        "wpackagist-plugin/mollie-payments-for-woocommerce": "^7.1",
+        "wpackagist-plugin/redirection": "^5.2",
+        "wpackagist-plugin/spinupwp": "^1.4",
+        "wpackagist-plugin/woocommerce": "^6.5",
+        "wpackagist-plugin/wordpress-seo": "^19.0",
+        "wpackagist-plugin/worker": "^4.9",
+        "wpackagist-plugin/wp-mail-logging": "^1.10",
+        "wpackagist-plugin/wp-mail-smtp": "^3.4",
+        "wpackagist-plugin/zettle-pos-integration": "^1.5",
+        "wp-media/wp-rocket": "^3.11",
+        "wpackagist-plugin/query-monitor": "^3.9",
+        "johnpbloch/wordpress": "^6.0",
+        "wpackagist-plugin/redis-object-cache": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "rm -rf wp-admin",
+            "rm -rf wp-includes",
+            "cp -rwordpress/wp-admin .",
+            "cp -rwordpress/wp-includes .",
+            "rm -rf wordpress"
+        ],
+        "post-update-cmd": [
+            "rm -rf wp-admin",
+            "rm -rf wp-includes",
+            "cp -r wordpress/wp-admin .",
+            "cp -r wordpress/wp-includes .",
+            "rm -rf wordpress"
+        ]
+    }
+}

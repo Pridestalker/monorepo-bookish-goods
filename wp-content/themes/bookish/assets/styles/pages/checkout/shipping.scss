@@ -1,0 +1,23 @@
+.shipping_address {
+  // Default state is hidden.
+  transform: rotateY(90deg) scale3d(1,0,0);
+  transition: transform 225ms ease-in-out;
+  transition-delay: 0ms;
+  transform-origin: top left;
+  position: absolute;
+  opacity: 0;
+
+  &.active {
+    transform: rotateY(0) scale3d(1, 1, 1);
+    position: static;
+    transition-delay: 75ms;
+    opacity: 1;
+  }
+}
+
+.shipping {
+  .woocommerce-shipping-destination,
+  .woocommerce-shipping-calculator {
+    display: none;
+  }
+}
