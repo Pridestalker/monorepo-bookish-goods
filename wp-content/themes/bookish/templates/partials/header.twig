@@ -1,0 +1,19 @@
+<header class="header">
+    <div class="container mx-auto py-4 flex gap-8 items-center">
+        <bookish-hamburger class="js-nav-opener"></bookish-hamburger>
+
+        <figure class="brand-logo">
+            {% set _logo = Image(theme.theme_mod('custom_logo')) %}
+            <a href="{{ site.link }}">
+                <picture>
+                    <source srcset="{{ _logo.src|towebp }}" type="image/webp">
+                    <source srcset="{{ _logo.src|retina(2)|towebp }} 2x" type="image/webp">
+                    <img src="{{ _logo.src }}" alt="{{ site.title }}" class="custom-logo brand-logo__image">
+                </picture>
+            </a>
+        </figure>
+
+
+        {% do action('bookish/template/header/end') %}
+    </div>
+</header>

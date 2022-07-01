@@ -1,0 +1,34 @@
+@use 'assets/styles/abstracts/variables' as v;
+
+.button {
+  padding: .75rem 1.5rem;
+  border-radius: .5rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  display: inline-block;
+
+  @each $color, $map in v.$colors {
+    &.#{$color} {
+      background: nth($map, 1);
+      color: nth($map, 2);
+
+      &.outlined {
+        background: transparent;
+        color: nth($map, 1);
+      }
+    }
+  }
+
+  &.outlined {
+   border-color: currentColor;
+  }
+
+  &.woocommerce-Button {
+    background: v.$primary;
+    color: v.$white;
+
+    .woocommerce-MyAccount-content & {
+      color: v.$white;
+    }
+  }
+}

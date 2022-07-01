@@ -1,0 +1,12 @@
+@use '../variables' as v
+//noinspection Stylelint
+.header
+    padding: 25px 0
+    text-align: center
+    a
+        color: map-get(v.$colors, 'primary')
+        font-size: 19px
+        font-weight: bold
+        text-decoration: none
+        text-shadow: 0 1px 0 v.$white
+

@@ -1,0 +1,26 @@
+<section class="hero-banner"
+         data-component="hero-banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for field in get_field('hero_banner_content') %}
+                <div class="swiper-slide hero-banner__slide">
+                    <figure class="hero-banner__background">
+                        {% set _slideImg = Image(field.hero_image) %}
+                        <img src="{{ _slideImg.src|resize(1920) }}"
+                             srcset="{{ _slideImg.src|resize(1920)|retina(2)|towebp }} 2x,{{ _slideImg.src|resize(620, 530)|towebp }} 620w"
+                             sizes="(max-width: 640px) 620px, 100vw"
+                             loading="lazy">
+                        <figcaption class="hero-banner__overlay">
+                            <h2 class="hero-banner__title">{{ field.hero_title }}</h2>
+                            {{ field.hero_content }}
+                        </figcaption>
+                        {% if field.hero_link and field.hero_link is not same as('') %}
+                            <a href="{{ field.hero_link }}" class="hero-banner__link">
+                            </a>
+                        {% endif %}
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

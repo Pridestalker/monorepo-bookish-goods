@@ -1,0 +1,8 @@
+{% macro coupon_code() %}
+    <div class="form-group-expanded">
+        <input type="text" name="coupon_code" class="input-text" placeholder="{{ __('Coupon code', 'woocommerce') }}" id="coupon_code" value="" />
+        <button type="submit" class="button secondary" name="apply_coupon" value="Toepassen">Toepassen</button>
+    </div>
+
+    <div class="clear"></div>
+{% endmacro %}

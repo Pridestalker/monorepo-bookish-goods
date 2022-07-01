@@ -1,0 +1,43 @@
+@use 'assets/styles/abstracts/functions';
+@use 'sass:color';
+
+.nav {
+  position: fixed;
+  z-index: 50;
+  background: functions.theme-color('black');
+  color: functions.theme-color('black', true);
+  inset-block: 0;
+  left: 0;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  padding: 4rem 2.5rem;
+  overflow-y: scroll;
+  max-height: 100vh;
+
+  box-shadow: inset -2rem -4rem 4rem hsla(0, 0%, 0%, 0.1);
+  transform: translateX(-100%);
+}
+
+.nav-item {
+  font-family: 'Merienda', fantasy;
+  font-size: 1.5rem;
+  font-weight: 900;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+  letter-spacing: .01em;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+  }
+}
+
+.submenu-group {
+  .submenu,
+  .js-submenu-opener {
+    display: none;
+  }
+}

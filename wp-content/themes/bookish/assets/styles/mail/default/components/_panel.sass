@@ -1,0 +1,47 @@
+@use '../variables' as v
+//noinspection Stylelint
+.panel
+    margin: 0 0 21px
+    border-radius: 10px
+
+    &-content
+        background-color: v.$gray
+        padding: 16px
+        border-radius: 16px
+        box-shadow: 0 2px 3px scale-color(v.$black, $alpha: -84%)
+    &-item
+        padding: 0
+        p:last-of-type
+            margin-bottom: 0
+            padding-bottom: 0
+
+    &.is-blue
+        .panel-content
+            background-color: v.$blue
+            a
+                color: v.$black
+
+    &.is-green
+        .panel-content
+            background-color: v.$green
+
+    &.is-red
+        .panel-content
+            background-color: v.$red
+            p, h1, h2, h3, a
+                color: v.$white
+
+    &.is-yellow
+        .panel-content
+            background-color: v.$yellow
+
+    &.is-orange
+        .panel-content
+            background-color: v.$orange
+            p, h1, h2, h3, a
+                color: v.$white
+
+    &.is-primary
+        .panel-content
+            background-color: map-get(v.$colors, 'primary')
+            color: v.$white

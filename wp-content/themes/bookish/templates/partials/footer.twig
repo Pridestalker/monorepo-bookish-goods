@@ -1,0 +1,43 @@
+<footer class="footer">
+    <div class="container mx-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            {% do fn('dynamic_sidebar', 'footer_col_1') %}
+            {% do fn('dynamic_sidebar', 'footer_col_2') %}
+            <div>
+                <h3>Socials</h3>
+                <a href="https://facebook.com/bookishgoods" title="Bezoek mijn facebook pagina"
+                   target="_blank"
+                   class="inline-block p-2">
+                    <i class="fab fa-facebook-square" style="font-size: 1.5rem;"></i>
+                </a>
+
+                <a href="https://www.instagram.com/bookishgoods/" title="Bezoek mijn instagram pagina"
+                   target="_blank"
+                   class="inline-block p-2">
+                    <i class="fab fa-instagram" style="font-size: 1.5rem;"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@bookishgoods/" title="Bezoek mijn TikTok pagina"
+                   target="_blank"
+                   class="inline-block p-2">
+                    <i class="fa-brands fa-tiktok" style="font-size: 1.5rem"></i>
+                </a>
+            </div>
+            <div>
+                <h3>Op de hoogte blijven?</h3>
+                <p>Meld je aan voor de nieuwsbrief en profiteer van kortingsacties.</p>
+
+                <!-- TODO(@mitchhijlkema): Make nice -->
+                <section id="mailchimp-subscribe-app"></section>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="flex justify-center flex-col lg:flex-row py-2 px-4 lg:px-0">
+        <a href="{{ fn('get_privacy_policy_url') }}" class="py-2 inline-block">Privacy</a> <span
+                class="m-2 hidden lg:inline">|</span>
+        <a href="/algemene-voorwaarden/" class="py-2 inline-block">Algemene voorwaarden</a> <span
+                class="m-2 hidden lg:inline">|</span>
+        <a href="/disclaimer/" class="py-2 inline-block">Disclaimer</a>
+    </div>
+</footer>

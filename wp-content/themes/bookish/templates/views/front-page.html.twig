@@ -1,0 +1,52 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <main class="home">
+        {% block heroBanner %}
+            {% if get_field('show_hero_banner') %}
+                {{ include('partials/pages/front-page/hero-banner.html.twig') }}
+            {% endif %}
+        {% endblock heroBanner %}
+
+        {% block newProducts %}
+            <section class="new-products py-16">
+                <div class="container mx-auto">
+                    <h2 class="text-center mb-14" data-aos="zoom-in">{{ __('Nieuwe producten', 'bookish') }}</h2>
+
+                    <div class="products-list mb-8">
+                        {% for product in new_products %}
+                            {% do action('bookish/template/product-card', product) %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="flex">
+                        <a href="{{ get_store_url() }}/?orderby=date"
+                           class="mx-auto primary outlined button">{{ __('Alle nieuwe producten bekijken', 'bookish') }}</a>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+
+        {% block popularProducts %}
+            <section class="popular-products py-12 px-4 lg:px-0">
+                <div class="container mx-auto">
+                    <h2 class="text-center mb-14" data-aos="zoom-in">{{ __('Populaire producten', 'bookish') }}</h2>
+
+                    <div class="products-list mb-8">
+                        {% for product in popular_products %}
+                            {% do action('bookish/template/product-card', product) %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="flex">
+                        <a href="{{ get_store_url() }}/?orderby=popularity"
+                           id="popular-products-store-link"
+                           class="mx-auto primary outlined button">{{ __('Alle populaire producten bekijken', 'bookish') }}</a>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+
+        {% block homeEnd %}{% endblock %}
+    </main>
+{% endblock %}

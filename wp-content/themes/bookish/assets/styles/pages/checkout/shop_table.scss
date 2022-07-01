@@ -1,0 +1,16 @@
+.shop_table {
+  margin-bottom: 1rem;
+  text-align: left;
+
+  td {
+    padding: 1rem 0;
+
+    &:first-of-type {
+      padding-right: 1rem;
+    }
+
+    &:last-of-type {
+      padding-left: 1rem;
+    }
+  }
+}

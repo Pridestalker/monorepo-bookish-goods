@@ -1,0 +1,10 @@
+<section class="login-toggle-wrapper">
+    <div class="login-toggle">
+        Ben je al klant en heb je een account?
+        Log in om je gegevens automatisch in te laten vullen!
+        <button class="text-primary js-login-toggle-button">Inloggen</button>
+    </div>
+
+    {% do fn('woocommerce_login_form', login_form_args) %}
+</section>
+

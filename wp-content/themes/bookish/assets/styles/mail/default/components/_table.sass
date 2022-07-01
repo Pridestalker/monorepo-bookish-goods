@@ -1,0 +1,22 @@
+@use '../variables' as v
+//noinspection Stylelint
+.table
+    table
+        margin: 30px auto
+        width: 100%
+    th
+        padding-bottom: 8px
+        margin: 0
+        text-align: center
+        &:not(.body-header)
+            border-bottom: 3px solid v.$gray
+    td
+        color: v.$black
+        text-align: center
+        font-size: 15px
+        line-height: 18px
+        padding: 10px 0
+        margin: 0
+
+.content-cell
+    padding: 35px

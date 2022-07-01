@@ -1,0 +1,112 @@
+<main>
+    {% if order.has_status('failed') %}
+        <section class="container mx-auto my-4">
+            <h1>
+                Je bestelling is niet gelukt.
+            </h1>
+            <p class="mb-4">
+                {{ __('Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce') }}
+            </p>
+
+            <p>
+                Als je de bestelling toch wil afronden kan je
+                <a href="{{ order.get_checkout_payment_url }}">
+                    Naar de betaalpagina
+                </a>
+            </p>
+        </section>
+
+    {% else %}
+        <h1>{{ __('Thank you. Your order has been received.', 'woocommerce') }}</h1>
+
+        <section class="container mx-auto my-4">
+            <section class="radius-sm shadow-sm p-4 lg:flex justify-between">
+                <p>
+                    <strong>Bestelnummer</strong> #{{ order.get_order_number }}
+                </p>
+                <p>
+                    <strong>Datum</strong> {{ fn('wc_format_datetime', order.get_date_created) }}
+                </p>
+                <p>
+                    <strong>Totaalbedrag</strong> {{ order.get_formatted_order_total }}
+                </p>
+                <p><strong>Betaald met</strong> {{ order.get_payment_method_title }}</p>
+            </section>
+        </section>
+
+        <section class="container mx-auto py-4 mt-4">
+            {% do action('woocommerce_thankyou_' ~ order.get_payment_method, order.get_id) %}
+
+            <h2 class="text-primary">
+                Bestelgegevens
+            </h2>
+
+            <table class="w-full text-left my-4">
+                <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>totaal</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in order.get_items %}
+                    <td>
+                        {{ item.get_name }} <strong>&times; {{ item.get_quantity }}</strong>
+                    </td>
+                    <td>
+                        {{ fn('wc_price', item.get_subtotal) }}
+                    </td>
+                {% endfor %}
+                </tbody>
+
+                <tfoot>
+                <tr>
+                    <th scope="row">Subtotaal</th>
+                    <td>{{ fn('wc_price', order.get_subtotal) }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Verzending</th>
+                    <td>{{ order.get_shipping_to_display }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Betaalmethode</th>
+                    <td>{{ order.get_payment_method }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Totaal</th>
+                    <td>{{ fn('wc_price', order.get_total) }}</td>
+                </tr>
+                </tfoot>
+            </table>
+
+            {% if order.get_customer_note %}
+                <p>
+                    <strong>Bijgevoegde notitie: </strong>
+
+                    {{ order.get_customer_not|wpautop }}
+                </p>
+            {% endif %}
+
+            <div class="lg:flex">
+                <div class="lg:w-1/2">
+                    <h3>Factuuradres</h3>
+                    <address>
+                        {{ order.get_formatted_billing_full_name }}
+                        {{ order.get_formatted_billing_address }}
+                        <p>
+                            {{ order.get_billing_phone }}
+                        </p>
+                        <p>
+                            {{ order.get_billing_email }}
+                        </p>
+                    </address>
+                </div>
+                <div class="lg:w-1/2 ml-auto">
+                    <h3>Verzendadres</h3>
+                    {{ order.get_formatted_shipping_full_name }}
+                    {{ order.get_formatted_shipping_address }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+</main>

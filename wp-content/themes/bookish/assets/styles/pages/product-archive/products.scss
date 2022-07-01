@@ -1,0 +1,10 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @apply gap-4 md:gap-8;
+
+  @screen md {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}

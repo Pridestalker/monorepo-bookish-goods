@@ -1,0 +1,5 @@
+@use 'abstracts' with (
+  $primary: hsl(262, 100%, 53%),
+  $black: hsl(204, 28%, 7%),
+  $theme-colors: (secondary: (hsl(187, 54%, 70%), hsl(204, 28%, 7%)))
+);

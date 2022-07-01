@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+
+{% block page_canonical_url %}
+    <meta name="canonical" content="{{ canon_url }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mx-auto my-8 lg:flex">
+        <h1>
+            {{ category ? category.title : 'Alle producten' }}
+        </h1>
+    </div>
+
+    <section class="container mx-auto my-8 lg:flex">
+        <aside class="lg:w-1/3 pr-4 hidden pre-product-filter product-filter--{{ category ? category.slug : 'default' }}">
+            <!-- space for a filter? -->
+        </aside>
+        <!-- lg:w-2/3 -->
+        <main class="products-wrapper">
+            <header class="lg:flex justify-between">
+                {% do fn('woocommerce_result_count') %}
+
+                {% do fn('woocommerce_catalog_ordering') %}
+            </header>
+            <section class="products py-4">
+                {% for product in products %}
+                    {% do action('bookish/template/product-card', product) %}
+                {% else %}
+                    <h2>Niks gevonden...</h2>
+                    <p>
+                        Probeer het opnieuw met een andere zoekterm. Of bekijk de populaire producten op de <a href="{{ site.link }}">Homepage</a>.
+                    </p>
+                {% endfor %}
+            </section>
+            {% do action('woocommerce_after_shop_loop') %}
+        </main>
+    </section>
+{% endblock %}

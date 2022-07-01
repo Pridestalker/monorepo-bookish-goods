@@ -1,0 +1,10 @@
+.product-breadcrumbs {
+  padding: .5rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @screen md {
+    padding: .5rem 0;
+    flex-direction: row;
+  }
+}

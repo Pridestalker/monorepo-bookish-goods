@@ -1,0 +1,47 @@
+<form
+    class="woocommerce-form woocommerce-form-login login"
+    method="post"
+    {% if hidden %}style="display: none"{% endif %} >
+
+    {% do action('woocommerce_login_form_start') %}
+
+    {% if message %}
+        {{ message|wpautop }}
+    {% endif %}
+
+    <p class="form-row form-row-first">
+        <label for="username">
+            {{ __('Username or email', 'woocommerce') }}
+        </label>
+        <input type="text" class="input-text" name="username" id="username" autocomplete="username" />
+    </p>
+    <div class="form-row form-row-last">
+        <label for="password">{{ __('Password', 'woocommerce') }}</label>
+        <input class="input-text" type="password" name="password" id="password" autocomplete="current-password" />
+    </div>
+    <div class="clear"></div>
+
+    {% do action('woocommerce_login_form') %}
+
+    <p class="form-row">
+        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" />
+        <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme" for="rememberme">
+            <span>{{ __('Remember me', 'woocommerce')  }}</span>
+        </label>
+        {{ nonce }}
+        <input type="hidden" name="redirect" value="{{ redirect }}">
+        <button type="submit" class="button primary">
+            {{ __('Login', 'woocommerce') }}
+        </button>
+    </p>
+
+    <p class="lost_password">
+        <a href="{{ lost_pw_url }}">
+            {{ __('Lost your poassword?', 'woocommerce') }}
+        </a>
+    </p>
+
+    <div class="clear"></div>
+
+    {% do action('woocommerce_login_form_end') %}
+</form>

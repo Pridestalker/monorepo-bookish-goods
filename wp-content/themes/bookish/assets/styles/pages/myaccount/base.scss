@@ -1,0 +1,90 @@
+@use 'assets/styles/abstracts/variables' as av;
+@use 'sass:color';
+@use 'sass:map';
+
+.woocommerce-account {
+  .woocommerce {
+    display: flex;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    flex: 1 1 30%;
+  }
+
+  .woocommerce-MyAccount-content {
+    flex: 1 1 70%;
+  }
+
+  .woocommerce-form-row {
+    margin-bottom: 1rem;
+    label {
+      display: block;
+    }
+
+    .input-text {
+      display: block;
+      appearance: textfield;
+      width: 100%;
+      background: av.$white;
+      border: 1px solid color.scale(av.$gray, $lightness: 30%);
+      line-height: 1;
+      border-radius: 4px;
+      padding: .5rem 1rem;
+      transition: all 225ms ease;
+
+      &:hover {
+        border-color: av.$gray;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 3px 6px color.scale(av.$green, $alpha: -80%);
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.col2-set {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @screen lg {
+    flex-direction: row;
+  }
+
+  .col-1, .col-2 {
+    flex: 1 0 45%;
+  }
+
+  .col-1 {
+    @screen lg {
+      margin-right: 5%;
+    }
+  }
+}
+
+.woocommerce-privacy-policy-text {
+  margin-bottom: 1rem;
+}
+
+.woocommerce-form-login,
+.woocommerce-form-register {
+  padding: 1rem;
+  border: 1px solid rgba(av.$black, 0.2);
+  border-radius: map.get(av.$radii, 'md');
+
+  .woocommerce-button {
+    background: av.$primary;
+    color: av.$white;
+    width: 100%;
+  }
+}

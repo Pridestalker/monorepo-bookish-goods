@@ -1,0 +1,346 @@
+# Translation of Plugins - WP Mail Logging - Stable (latest release) in Dutch
+# This file is distributed under the same license as the Plugins - WP Mail Logging - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-07-03 22:27:58+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - WP Mail Logging - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/wysija/"
+msgstr "https://profiles.wordpress.org/wysija/"
+
+#. Author of the plugin
+msgid "Wysija"
+msgstr "Wysija"
+
+#: src/WPML_OptionsManager.php:440
+msgid "Email log"
+msgstr "E-maillogboek"
+
+#: src/WPML_PrivacyController.php:137
+msgid "A mail with the id %d was unable to be removed at this time."
+msgstr "Een e-mail met het ID %d kon op dit moment niet verwijderd worden."
+
+#: src/WPML_PrivacyController.php:101
+msgid "Mails"
+msgstr "E-mails"
+
+#: src/WPML_PrivacyController.php:43
+msgid "When you use this site several actions (e.g. commenting) trigger the dispatch of emails. They contain information about you associated with your email address. Which data are part of these emails depends on the action performed. These emails are stored and accessible to the site management as log."
+msgstr "Bij het uitvoeren van verschillende acties op deze site (bijvoorbeeld reageren) worden er e-mails verstuurd; ze bevatten informatie over degene die met het e-mailadres verbonden is. Welke gegevens deel uitmaken van deze e-mails is afhankelijk van de uitgevoerde actie. Deze e-mails worden opgeslagen en zijn als logboek toegankelijk voor de sitebeheerder."
+
+#. Description of the plugin
+msgid "Logs each email sent by WordPress."
+msgstr "Logt elke e-mail die wordt verstuurd door WordPress."
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/wp-mail-logging/"
+msgstr "https://wordpress.org/plugins/wp-mail-logging/"
+
+#. Plugin Name of the plugin
+#: src/WPML_PrivacyController.php:54 src/WPML_PrivacyController.php:62
+msgid "WP Mail Logging"
+msgstr "WP Mail Logging"
+
+#: wp-mail-logging.php:50
+msgid "Your server's PHP version: "
+msgstr "De PHP versie van je server:"
+
+#: wp-mail-logging.php:49
+msgid "Minimal version of PHP required: "
+msgstr "Minimaal vereiste PHP-versie:"
+
+#: wp-mail-logging.php:48
+msgid "Error: plugin \"WP Mail Logging\" requires a newer version of PHP to be running."
+msgstr "Fout: de plugin 'WP Mail Logging' vereist een nieuwere PHP-versie."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:193
+msgid "Delete mails older than days..."
+msgstr "Verwijder e-mails die ouder zijn dagen..."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:181
+msgid "Cleanup by Time"
+msgstr "Opschonen op tijd"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:171
+msgid "Cleanup when the stored mails exceed..."
+msgstr "Opschonen als het aantal opgeslagen e-mails groter is dan..."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:170
+#: src/inc/redux/WPML_Redux_Framework_config.php:192
+msgid "When should mails are deleted?"
+msgstr "Wanneer moeten e-mails worden verwijderd?"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:169
+msgid "Amount"
+msgstr "Bedrag"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:160
+#: src/inc/redux/WPML_Redux_Framework_config.php:182
+msgid "Setup a automated cleanup routine!"
+msgstr "Configureer een automatische opschoonroutine."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:159
+msgid "Cleanup by Amount"
+msgstr "Opschonen op aantal"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:153
+msgid "Save space by deleting logs regularly."
+msgstr "Bespaar ruimte door de logboeken regelmatig te verwijderen."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:152
+msgid "Log Rotation"
+msgstr "Logrotatie"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:140
+msgid "Display host column in list."
+msgstr "Geef de host-kolom in een lijst weer."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:139
+msgid "Display Host"
+msgstr "Toon host"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:134
+msgid "Select your preferred display format."
+msgstr "Selecteer de voorkeursweergave."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:133
+msgid "Default Format for Message"
+msgstr "Standaardweergave van het bericht"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:105
+#: src/inc/redux/WPML_Redux_Framework_config.php:122
+#: src/inc/redux/WPML_Redux_Framework_config.php:147
+#: src/inc/redux/WPML_Redux_Framework_config.php:163
+#: src/inc/redux/WPML_Redux_Framework_config.php:185
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:104
+#: src/inc/redux/WPML_Redux_Framework_config.php:121
+#: src/inc/redux/WPML_Redux_Framework_config.php:146
+#: src/inc/redux/WPML_Redux_Framework_config.php:162
+#: src/inc/redux/WPML_Redux_Framework_config.php:184
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:119
+msgid "Use format from WordPress settings (%s)"
+msgstr "Gebruik het format van de WordPress-instellingen (%s)"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:118
+msgid "WordPress Date Time Format"
+msgstr "Datum/tijd-weergave van WordPress"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:113
+msgid "Select the minimum role."
+msgstr "Selecteer de minimum-rol."
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:112
+msgid "Can See Submission data"
+msgstr "Inzendingsgegevens zijn te zien"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:102
+msgid "Delete all data on deactivation? (emails and settings)?"
+msgstr "Alle gegevens verwijderen bij deactivering (e-mails en instellingen)?"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:101
+msgid "Cleanup"
+msgstr "Opschonen"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:92
+msgid "General Settings"
+msgstr "Algemene instellingen"
+
+#: src/inc/class-wp-list-table.php:720
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: src/inc/class-wp-list-table.php:584
+msgid "Go to the last page"
+msgstr "Ga naar de laatste pagina"
+
+#: src/inc/class-wp-list-table.php:577
+msgid "Go to the next page"
+msgstr "Ga naar de volgende pagina"
+
+#: src/inc/class-wp-list-table.php:573
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr "%1$s van de %2$s"
+
+#: src/inc/class-wp-list-table.php:567
+msgid "Current page"
+msgstr "Huidige pagina"
+
+#: src/inc/class-wp-list-table.php:558
+msgid "Go to the previous page"
+msgstr "Ga naar de vorige pagina"
+
+#: src/inc/class-wp-list-table.php:551
+msgid "Go to the first page"
+msgstr "Ga naar de eerste pagina"
+
+#: src/inc/class-wp-list-table.php:533 src/inc/class-wp-list-table.php:948
+msgid "1 item"
+msgid_plural "%s items"
+msgstr[0] "1 item"
+msgstr[1] "%s items"
+
+#: src/inc/class-wp-list-table.php:465
+msgid "%s pending"
+msgstr "%s wachtend"
+
+#: src/inc/class-wp-list-table.php:439
+msgid "Excerpt View"
+msgstr "Samenvatting weergave"
+
+#: src/inc/class-wp-list-table.php:438
+msgid "List View"
+msgstr "Lijstweergave"
+
+#. translators: 1: month name, 2: 4-digit year
+#: src/inc/class-wp-list-table.php:422
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: src/inc/class-wp-list-table.php:409
+msgid "Show all dates"
+msgstr "Alle datums tonen"
+
+#: src/inc/class-wp-list-table.php:325
+msgid "Apply"
+msgstr "Toepassen"
+
+#: src/inc/class-wp-list-table.php:315
+msgid "Bulk Actions"
+msgstr "Bulkacties"
+
+#: src/inc/class-wp-list-table.php:191
+msgid "No items found."
+msgstr "Niets gevonden."
+
+#: src/WPML_OptionsManager.php:573
+msgid "Anyone"
+msgstr "Iedereen"
+
+#: src/WPML_OptionsManager.php:571
+msgid "Subscriber"
+msgstr "Abonnee"
+
+#: src/WPML_OptionsManager.php:569
+msgid "Contributor"
+msgstr "Bijdrager"
+
+#: src/WPML_OptionsManager.php:567
+msgid "Author"
+msgstr "Auteur"
+
+#: src/WPML_OptionsManager.php:565
+msgid "Editor"
+msgstr "Editor"
+
+#: src/WPML_OptionsManager.php:563
+msgid "Administrator"
+msgstr "Beheerder"
+
+#: src/WPML_OptionsManager.php:560
+msgid "false"
+msgstr "niet waar"
+
+#: src/WPML_OptionsManager.php:558
+msgid "true"
+msgstr "waar"
+
+#: src/WPML_OptionsManager.php:534
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/WPML_OptionsManager.php:520
+msgid "Close"
+msgstr "Sluiten"
+
+#: src/WPML_OptionsManager.php:426
+msgid "Log"
+msgstr "Log"
+
+#: src/WPML_OptionsManager.php:415 src/WPML_OptionsManager.php:478
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Je hebt onvoldoende rechten voor toegang tot deze pagina."
+
+#: src/WPML_OptionsManager.php:349
+msgid "Entries per page"
+msgstr "Regels per pagina"
+
+#: src/WPML_OptionsManager.php:339 src/WPML_OptionsManager.php:340
+#: src/WPML_OptionsManager.php:360
+msgid "About"
+msgstr "Over"
+
+#: src/WPML_OptionsManager.php:328 src/WPML_OptionsManager.php:329
+msgid "WP Mail Log"
+msgstr "WP mail log"
+
+#: src/WPML_LifeCycle.php:205 src/WPML_OptionsManager.php:444
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/Renderer/WPML_MailRenderer.php:65
+msgid "Fallback to raw format because html is not convertible to json."
+msgstr "Fallback naar onopgemaakt format, omdat HTML niet converteerbaar is naar JSON."
+
+#: src/Renderer/Column/AttachmentsColumn.php:49
+#: src/Renderer/Column/AttachmentsColumn.php:80
+msgid "Attachment %s is not present"
+msgstr "Bijlage %s is niet aanwezig"
+
+#: src/Renderer/WPML_ColumnManager.php:33
+msgid "Host"
+msgstr "Host"
+
+#: src/Renderer/WPML_ColumnManager.php:40
+msgid "Plugin Version"
+msgstr "Plugin-versie"
+
+#: src/Renderer/WPML_ColumnManager.php:39
+msgid "Error"
+msgstr "Fout"
+
+#: src/Renderer/WPML_ColumnManager.php:38
+msgid "Attachments"
+msgstr "Bijlagen"
+
+#: src/Renderer/WPML_ColumnManager.php:37
+msgid "Headers"
+msgstr "Headers"
+
+#: src/Renderer/WPML_ColumnManager.php:36 src/WPML_OptionsManager.php:503
+msgid "Message"
+msgstr "Bericht"
+
+#: src/Renderer/WPML_ColumnManager.php:35
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: src/Renderer/WPML_ColumnManager.php:34
+msgid "Receiver"
+msgstr "Ontvanger"
+
+#: src/inc/redux/WPML_Redux_Framework_config.php:191
+#: src/Renderer/WPML_ColumnManager.php:32
+msgid "Time"
+msgstr "Tijd"
+
+#: src/Renderer/WPML_ColumnManager.php:31
+msgid "ID"
+msgstr "ID"
+
+#: src/WPML_Email_Log_List.php:63
+msgid "No email found."
+msgstr "Geen e-mails gevonden."

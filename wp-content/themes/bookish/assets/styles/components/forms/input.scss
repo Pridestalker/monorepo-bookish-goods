@@ -1,0 +1,110 @@
+//@use 'assets/styles/abstracts/variables' as av;
+//@use 'sass:color';
+//
+//input,
+//textarea {
+//  &:not([type="checkbox"]):not([type="radio"]) {
+//    @apply block w-full;
+//    @apply rounded;
+//    @apply py-2 px-4 mb-4;
+//    @apply border border-gray-400;
+//    @apply leading-none;
+//    appearance: textfield;
+//    background: av.$white;
+//    transition: all 225ms ease;
+//
+//    &:hover {
+//      border-color: av.$gray;
+//    }
+//    &:focus {
+//      outline: none;
+//      border-color: av.$secondary;
+//    }
+//  }
+//
+//  &[type="checkbox"], &[type="radio"] {
+//    display: none; // Default hide checkout
+//    // Give checkout a special one of a kind-esque box
+//    + label {
+//      position: relative;
+//      padding-left: 2rem;
+//
+//      &::before {
+//        content: ' ';
+//        width: 1rem;
+//        height: 1rem;
+//        border: 2px solid av.$primary;
+//        display: inline-block;
+//        position: absolute;
+//        left: 0;
+//        top: .125rem;
+//        transition: all 225ms ease;
+//      }
+//    }
+//
+//    // Default hide checkbox description
+//    ~ .payment_box {
+//      transform: rotateY(90deg) scale3d(1,0,0);
+//      transition: transform 225ms ease-in-out;
+//      transition-delay: 0ms;
+//      transform-origin: top left;
+//      position: absolute;
+//      opacity: 0;
+//    }
+//
+//    &:checked {
+//      // Show checkmark as checked only when input IS checked
+//      + label {
+//        &::before {
+//          border-left-color: transparent;
+//          border-top-color: transparent;
+//          border-radius: 0;
+//          left: 5px;
+//          top: -5px;
+//          width: .5rem;
+//          transform: rotate(45deg);
+//
+//        }
+//      }
+//
+//      ~ .payment_box {
+//        transform: rotateY(0) scale3d(1, 1, 1);
+//        position: static;
+//        transition-delay: 75ms;
+//        opacity: 1;
+//      }
+//    }
+//  }
+//}
+//
+//select {
+//  @apply block appearance-none w-full bg-white border border-gray-400 px-4 py-2 pr-8 rounded leading-tight;
+//
+//  &:hover {
+//    @apply border-gray-500;
+//  }
+//
+//  &:focus {
+//    @apply outline-none;
+//  }
+//}
+//
+//// Add select wrappers to show chevron-down
+//.woocommerce-ordering,
+//.payment_method_mollie_wc_gateway_ideal.payment_box ,
+//#billing_country_field > .woocommerce-input-wrapper {
+//  position: relative;
+//  display: block;
+//
+//  &::after {
+//    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");
+//    content: ' ';
+//    position: absolute;
+//    z-index: 10;
+//    width: 1rem;
+//    height: 1rem;
+//    top: 0.7rem;
+//    right: 0.5rem;
+//    background-size: contain;
+//  }
+//}
