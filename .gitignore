@@ -16,6 +16,7 @@ wp-content/mu-plugins
 !wp-content/mu-plugins/force-shipping-methods.php
 !wp-content/mu-plugins/matomo-tracking.php
 wp-content
+!wp-content/themes/bookish
 wp-content/themes/bookish/node_modules/
 wp-content/themes/bookish/vendor/
 !wp-content/themes/bookish/assets/scripts/vendor
