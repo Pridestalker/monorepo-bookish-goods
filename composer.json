@@ -54,8 +54,8 @@
         "post-install-cmd": [
             "rm -rf wp-admin",
             "rm -rf wp-includes",
-            "cp -rwordpress/wp-admin .",
-            "cp -rwordpress/wp-includes .",
+            "cp -r wordpress/wp-admin .",
+            "cp -r wordpress/wp-includes .",
             "rm -rf wordpress"
         ],
         "post-update-cmd": [

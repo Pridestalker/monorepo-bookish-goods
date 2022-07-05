@@ -1,16 +1,6 @@
-import { GalleryItem, GalleryGroup, TabItem, TabGroup } from '../../src/Elements/Product';
-import { renderVariableAddToCart, renderSimpleAddToCart } from '../../services/add-to-cart';
+import { Component } from '@webreact/webreactor';
 
-export default {
-	init() {
-		customElements.define('bookish-gallery', GalleryGroup);
-		customElements.define('bookish-gallery-item', GalleryItem);
-		customElements.define('bookish-tabs', TabGroup);
-		customElements.define('bookish-tab', TabItem);
-	},
-
-	finalize() {
-		renderVariableAddToCart();
-		renderSimpleAddToCart();
-	},
-};
+export default class extends Component {
+  static target = '.single-product';
+  static _name = 'Single Product - general';
+}

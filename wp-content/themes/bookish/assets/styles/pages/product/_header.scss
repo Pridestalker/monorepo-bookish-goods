@@ -1,0 +1,12 @@
+@use 'sass:color' as sc;
+@use 'assets/styles/abstracts/variables/colors';
+
+.product-header {
+  &__categories {
+    display: block;
+  }
+
+  &__share {
+    @apply mt-3;
+  }
+}

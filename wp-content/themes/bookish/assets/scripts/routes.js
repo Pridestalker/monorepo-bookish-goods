@@ -22,6 +22,11 @@ const components = [
     target: '[data-component="share-button"]',
     file: async () => (await import(/* webpackChunkName: "share" */ './routes/common/share')).default,
   },
+  {
+    target: '[data-component="product-gallery"]',
+    file: async () =>
+      (await import(/* webpackChunkName: "single-product/gallery" */ './routes/single-product/Gallery')).default,
+  },
 ];
 
 export default components;

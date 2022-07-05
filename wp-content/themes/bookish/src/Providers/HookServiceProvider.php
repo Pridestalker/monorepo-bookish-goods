@@ -12,7 +12,9 @@ use App\Controllers\Hooks\Actions\Layouts\InjectHeader;
 use App\Controllers\Hooks\Actions\Layouts\InjectMiniCart;
 use App\Controllers\Hooks\Actions\Layouts\InjectNavigation;
 use App\Controllers\Hooks\Actions\Layouts\InjectSearchForm;
+use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductGallery;
 use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductHeader;
+use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductSidebar;
 use App\Controllers\Hooks\Actions\Layouts\RenderProductCard;
 use App\Controllers\Hooks\Actions\WooCommerce\ApplyCookieCouponCode;
 use App\Controllers\Hooks\Actions\WooCommerce\CheckForCouponCookie;
@@ -70,6 +72,14 @@ class HookServiceProvider extends ServiceProvider
                 'hook' => 'woocommerce_review_order_before_payment',
                 'callback' => 'woocommerce_checkout_coupon_form',
             ],
+            [
+                'hook' => 'bookish/template/single-product/sidebar/add-to-cart',
+                'callback' => 'woocommerce_template_single_add_to_cart',
+            ],
+//            [
+//                'hook' => 'woocommerce_set_add_to_cart',
+//                'callback' => 'woocommerce_simple_add_to_cart',
+//            ],
             OrderStatusPaymentReceived::class,
             PaymentReceivedCustomNotification::class,
             CheckForCouponCookie::class,
@@ -82,6 +92,8 @@ class HookServiceProvider extends ServiceProvider
             InjectFooter::class,
             RenderProductCard::class,
             InjectProductHeader::class,
+            InjectProductGallery::class,
+            InjectProductSidebar::class,
         ]);
 
         $this->filters_unhook = apply_filters('bookish/providers/filters/unhook', []);

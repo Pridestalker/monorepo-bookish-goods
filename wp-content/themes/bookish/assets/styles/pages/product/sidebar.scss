@@ -1,36 +1,59 @@
-@use 'assets/styles/abstracts/variables' as av;
+@use 'sass:color' as sc;
+@use 'assets/styles/abstracts/variables/colors';
 
 .product-sidebar {
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+  @apply space-y-8;
+  @apply rounded-lg;
+  @apply bg-white;
+  @apply shadow;
 
   @screen lg {
-    border: 1px solid rgba(av.$black, 0.2);
-    border-radius: .25rem;
-    align-self: flex-start;
+    grid-column: 9 / 13;
   }
 
-  .product-price {
+  .label {
+    background: colors.$primary;
+    color: colors.$white;
+    display: inline flow-root;
+    padding: .125rem .75rem;
+    order: 3;
+    margin-inline-start: auto;
+
+    @apply rounded;
+  }
+
+  &__price-wrapper {
     display: flex;
-    color: av.$black;
-    margin-block-end: 1rem;
-  }
+    align-items: center;
+    gap: 1rem;
+    font-variant-numeric: tabular-nums;
 
-  label[for^="pa_"] {
-    display: block;
-    margin: 2rem 0 1rem;
-  }
+    ins,
+    del {
+      text-decoration: none;
+    }
 
-  select {
-    display: block;
+    ins {
+      @apply text-2xl;
+      order: 1;
+      font-weight: 700;
+    }
+
+    del {
+      @apply text-base;
+      order: 2;
+      color: colors.$dark;
+      opacity: 0.5;
+    }
   }
 }
 
-.product-add-to-cart {
-  border: 1px solid av.$green;
-  background: av.$green;
-  color: av.$white;
-  padding: .5rem;
-  margin: 1rem 0;
-  display: block;
+.alert {
+  background: colors.$secondary;
+  border: colors.$dark;
+  padding: .5rem 1.25rem;
+  @apply rounded;
+  border: 1px solid darken(colors.$secondary, 30%);
 }

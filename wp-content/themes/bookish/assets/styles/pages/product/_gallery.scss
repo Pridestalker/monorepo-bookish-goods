@@ -1,0 +1,52 @@
+@use 'sass:color' as sc;
+@use 'assets/styles/abstracts/variables/colors';
+
+.product-gallery {
+  position: sticky;
+  display: grid;
+  @apply grid-cols-4 gap-4;
+  top: 3.5rem;
+  grid-column: 1 / -1;
+
+  @screen lg {
+    grid-column: 1 / 8;
+  }
+
+  &__images {
+    @apply col-span-1;
+    @apply space-y-2;
+
+    overflow: scroll;
+    max-height: 40rem;
+    scrollbar-width: none;
+
+    scroll-snap-type: y mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    img {
+      @apply rounded-lg;
+      scroll-snap-align: start;
+      cursor: zoom-in;
+
+      transition: border-radius .2s ease-out;
+
+      &:hover {
+        transition: border-radius .2s ease-in;
+        @apply rounded-tl-2xl rounded-br-2xl;
+      }
+    }
+  }
+
+  &__selected-image {
+    @apply col-span-3;
+    @apply rounded-xl;
+    height: 40rem;
+  }
+
+  img {
+    @apply aspect-square;
+  }
+}

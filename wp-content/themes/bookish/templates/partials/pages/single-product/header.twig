@@ -1,10 +1,10 @@
 <header class="container vertical-spacing product-header">
     <label class="product-header__categories"
-           data-aos="fade-down">{{ product.get_category_name_array|join(', ') }}</label>
+           data-aos="fade-left">{{ product.get_category_name_array|join(', ') }}</label>
     <h1 class="product-header__title" data-aos="zoom-in">{{ product.get_title }}</h1>
 
 
-    <button class="" data-component="share-button">
+    <button class="product-header__share" data-component="share-button">
         <i class="fa-regular fa-share-nodes"></i>
         <span>{{ __('Delen', 'bookish') }}</span>
     </button>

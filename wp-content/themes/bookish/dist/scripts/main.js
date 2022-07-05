@@ -199,6 +199,34 @@ var components = [{
 
     return file;
   }()
+}, {
+  target: '[data-component="product-gallery"]',
+  file: function () {
+    var _file6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+      return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.next = 2;
+              return __webpack_require__.e(/*! import() | single-product/gallery */ "single-product/gallery").then(__webpack_require__.bind(__webpack_require__, /*! ./routes/single-product/Gallery */ "./assets/scripts/routes/single-product/Gallery.js"));
+
+            case 2:
+              return _context6.abrupt("return", _context6.sent["default"]);
+
+            case 3:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }));
+
+    function file() {
+      return _file6.apply(this, arguments);
+    }
+
+    return file;
+  }()
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (components);
 

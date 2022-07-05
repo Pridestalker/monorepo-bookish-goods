@@ -1,79 +1,9 @@
-@use 'sass:color';
-@use 'assets/styles/abstracts/variables';
+@use 'sass:color' as sc;
+@use 'assets/styles/abstracts/variables/colors';
 
-.main-content {
-  @screen lg {
-    display: flex;
-
-    > div {
-      flex: 0 1 60%;
-    }
-
-    > aside {
-      flex: 1 0 40%;
-    }
-  }
-}
-
-.product-description {
-  @apply px-4;
-
-  @screen lg {
-    @apply px-0;
-  }
-}
-
-.attribute-table {
-  width: 100%;
-
-  td {
-    padding: .5rem 0;
-  }
-
-  tr:nth-child(2n+0) {
-    background: color.scale(variables.$yellow);
-  }
-}
-
-body:not(.page-wishlist) {
-  .content {
-    > p:not(:last-child) {
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-
-    a:not(.button) {
-      color: variables.$primary;
-      text-decoration: underline;
-      transition: color 225ms ease;
-
-      &:hover {
-        color: color.scale(variables.$primary, $lightness: -20%);
-      }
-    }
-
-    > h2, h3 {
-      margin-bottom: .5rem;
-      display: block;
-    }
-  }
-}
-
-.single-product {
-  .content {
-    ul, ol {
-      padding-left: 1rem;
-
-      li {
-        position: relative;
-
-        &::before {
-          content: '-';
-          color: hsl(265, 83%, 45%);
-          position: absolute;
-          left: -.5rem;
-        }
-      }
-    }
-  }
+.product-content {
+  display: grid;
+  @apply grid-cols-4 md:grid-cols-6 lg:grid-cols-12;
+  @apply gap-5 md:gap-6 xl:gap-8;
+  place-items: flex-start stretch;
 }

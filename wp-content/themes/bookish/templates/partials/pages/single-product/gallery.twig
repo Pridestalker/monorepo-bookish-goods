@@ -1,0 +1,31 @@
+<div class="product-gallery" data-component="product-gallery">
+	{% do action('bookish/template/single-product-gallery/before') %}
+	
+	<aside class="product-gallery__images">
+		<img src="{{ product.thumbnail.src|resize(210)|towebp }}"
+			 srcset="{{ product.thumbnail.src|resize(210)|retina(2)|towebp }} 2x"
+			 data-src="{{ product.thumbnail.src|resize(640)|towebp }}"
+			 data-srcset="{{ product.thumbnail.src|resize(640)|retina(2)|towebp }} 2x"
+			 alt="">
+		{% for image in product.gallery_items %}
+			{% set img = Image(image) %}
+			
+			<img src="{{ img.src|resize(210)|towebp }}"
+				 srcset="{{ img.src|resize(210)|retina(2)|towebp }} 2x"
+				 data-src="{{ img.src|resize(640)|towebp }}"
+				 data-srcset="{{ img.src|resize(640)|retina(2)|towebp }} 2x"
+				 loading="lazy"
+				 alt="">
+		{% endfor %}
+	</aside>
+	
+	<img src="{{ product.thumbnail.src|resize(640)|towebp }}"
+		 srcset="{{ product.thumbnail.src|resize(640)|retina(2)|towebp }} 2x"
+		 alt=""
+		 data-aos="fade-up"
+		 class="product-gallery__selected-image">
+	
+	{% do action('bookish/template/single-product-gallery/after') %}
+	
+	{# TODO: Add favorite button when possible #}
+</div>

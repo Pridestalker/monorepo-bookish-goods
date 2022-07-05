@@ -6,9 +6,17 @@
 
         {% do action('bookish/template/product/before-content', product) %}
 
-        {% do action('bookish/template/product/content', product) %}
+        <div class="container product-content vertical-spacing">
+            {% do action('bookish/template/product/content', product) %}
+
+            <!-- TODO: Dynamische USPS -->
+            <!-- TODO: Content block -->
+        </div>
+
 
         {% do action('bookish/template/product/after-content', product) %}
+
+        <!-- TODO: Gerelateerde producten -->
 
         <div hidden class="container mx-auto">
             <section class="main-content py-4">
@@ -35,6 +43,7 @@
                 </div>
 
                 <aside class="product-sidebar">
+                    {{ product.get_stock_quantity }}
                     <h2 class="product-price">
                         {% block productPrice %}
                             {% if product.is_on_sale %}

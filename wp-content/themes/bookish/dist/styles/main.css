@@ -653,20 +653,20 @@ label,
   color: hsl(357deg, 100%, 55%);
 }
 .button.purple {
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
 }
 .button.purple.outlined {
   background: transparent;
-  color: hsl(265deg, 83%, 45%);
+  color: hsl(268deg, 71%, 45%);
 }
 .button.primary {
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
 }
 .button.primary.outlined {
   background: transparent;
-  color: hsl(265deg, 83%, 45%);
+  color: hsl(268deg, 71%, 45%);
 }
 .button.secondary {
   background: hsl(47deg, 100%, 68%);
@@ -680,7 +680,7 @@ label,
   border-color: currentColor;
 }
 .button.woocommerce-Button {
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
 }
 .woocommerce-MyAccount-content .button.woocommerce-Button {
@@ -691,7 +691,7 @@ label,
 #place_order {
   display: block;
   color: hsl(0deg, 100%, 100%);
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   margin-top: 1rem;
 }
 
@@ -708,7 +708,7 @@ label,
 }
 
 .product-breadcrumbs a:not([aria-current=page]) {
-  color: hsl(265deg, 83%, 45%);
+  color: hsl(268deg, 71%, 45%);
 }
 @media (min-width: 768px) {
   .product-breadcrumbs a:not([aria-current=page])::after {
@@ -727,7 +727,7 @@ label,
   }
 }
 .woocommerce-message .button {
-  color: hsl(265deg, 83%, 45%);
+  color: hsl(268deg, 71%, 45%);
   text-decoration: underline;
 }
 @media (min-width: 1024px) {
@@ -788,7 +788,7 @@ label,
 }
 
 header.header {
-  --wr-hamburger-color: hsl(265deg, 83%, 45%);
+  --wr-hamburger-color: hsl(268deg, 71%, 45%);
   --wr-hamburger-width: 1.5rem;
   background: rgba(255, 255, 255, 0.75);
   -webkit-backdrop-filter: blur(15px);
@@ -797,7 +797,7 @@ header.header {
   position: sticky;
   z-index: 50;
   top: 0;
-  border-bottom: 1px solid rgba(99, 20, 210, 0.25);
+  border-bottom: 1px solid rgba(109, 33, 196, 0.25);
   transition: box-shadow 0.3s ease-in-out, border-bottom-width 0.3s ease-in-out;
 }
 header.header.headroom--not-top {
@@ -819,8 +819,8 @@ header.header.headroom--not-top .shopping-cart-button::after {
 }
 
 .shopping-cart-button {
-  border: 1px solid hsl(265deg, 83%, 45%);
-  color: hsl(265deg, 83%, 45%);
+  border: 1px solid hsl(268deg, 71%, 45%);
+  color: hsl(268deg, 71%, 45%);
   border-radius: 0.5rem;
   position: relative;
   padding: 0.5rem 1.25rem;
@@ -834,7 +834,7 @@ header.header.headroom--not-top .shopping-cart-button::after {
   position: absolute;
   bottom: -0.5rem;
   left: -0.5rem;
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
   border-radius: 50%;
   font-size: 70%;
@@ -848,7 +848,7 @@ header.header.headroom--not-top .shopping-cart-button::after {
   transform: none;
 }
 .shopping-cart-button::before {
-  background-color: hsl(265deg, 83%, 45%);
+  background-color: hsl(268deg, 71%, 45%);
   width: 100%;
   height: 100%;
   content: " ";
@@ -861,7 +861,7 @@ header.header.headroom--not-top .shopping-cart-button::after {
   transition: transform 0.3s ease-out;
 }
 .shopping-cart-button::after {
-  background-color: hsl(265deg, 83%, 45%);
+  background-color: hsl(268deg, 71%, 45%);
   width: 100%;
   height: 100%;
   content: " ";
@@ -883,7 +883,7 @@ header.header.headroom--not-top .shopping-cart-button::after {
   border: 2px solid hsl(47deg, 100%, 68%);
   border-radius: 50rem;
   background: hsl(0deg, 100%, 100%);
-  color: hsl(265deg, 83%, 45%);
+  color: hsl(268deg, 71%, 45%);
   transition: flex-grow 0.3s ease-in-out;
 }
 .search-form__button {
@@ -982,7 +982,7 @@ body.menu-active {
 .footer {
   border-top-width: 2px;
   border-top-style: solid;
-  border-top-color: hsl(265deg, 83%, 45%);
+  border-top-color: hsl(268deg, 71%, 45%);
   color: hsl(284deg, 57%, 12%);
 }
 
@@ -1047,7 +1047,7 @@ body.menu-active {
   padding-block: 1rem;
   padding-inline: 0.75rem;
   color: hsl(0deg, 100%, 100%);
-  background-color: hsl(265deg, 83%, 45%);
+  background-color: hsl(268deg, 71%, 45%);
   width: 100%;
 }
 .category-cta > a {
@@ -1103,7 +1103,7 @@ body.menu-active {
 .product-card__label {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  background: rgba(99, 20, 210, 0.4);
+  background: rgba(109, 33, 196, 0.4);
   color: hsl(0deg, 100%, 100%);
   -webkit-backdrop-filter: blur(2rem);
           backdrop-filter: blur(2rem);
@@ -1127,101 +1127,169 @@ body.menu-active {
   text-decoration: none;
 }
 
+.product-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+
+  .product-content {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
-  .main-content {
-    display: flex;
-  }
-  .main-content > div {
-    flex: 0 1 60%;
-  }
-  .main-content > aside {
-    flex: 1 0 40%;
+
+  .product-content {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 }
 
-.product-description {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.product-content {
+  gap: 1.25rem;
 }
-@media (min-width: 1024px) {
-  .product-description {
-    padding-left: 0px;
-    padding-right: 0px;
+
+@media (min-width: 768px) {
+
+  .product-content {
+    gap: 1.5rem;
   }
 }
 
-.attribute-table {
-  width: 100%;
-}
-.attribute-table td {
-  padding: 0.5rem 0;
-}
-.attribute-table tr:nth-child(2n+0) {
-  background: hsl(47deg, 100%, 68%);
+@media (min-width: 1280px) {
+
+  .product-content {
+    gap: 2rem;
+  }
 }
 
-body:not(.page-wishlist) .content > p:not(:last-child) {
-  margin-bottom: 1.5rem;
+.product-content {
+  place-items: flex-start stretch;
+}
+
+.product-header__categories {
   display: block;
 }
-body:not(.page-wishlist) .content a:not(.button) {
-  color: hsl(265deg, 83%, 45%);
-  text-decoration: underline;
-  transition: color 225ms ease;
-}
-body:not(.page-wishlist) .content a:not(.button):hover {
-  color: #4f10a8;
-}
-body:not(.page-wishlist) .content > h2, body:not(.page-wishlist) .content h3 {
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.single-product .content ul, .single-product .content ol {
-  padding-left: 1rem;
-}
-.single-product .content ul li, .single-product .content ol li {
-  position: relative;
-}
-.single-product .content ul li::before, .single-product .content ol li::before {
-  content: "-";
-  color: hsl(265deg, 83%, 45%);
-  position: absolute;
-  left: -0.5rem;
+.product-header__share {
+  margin-top: 0.75rem;
 }
 
 .product-sidebar {
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  grid-column: 1/-1;
+  padding: 1.5rem;
+}
+
+.product-sidebar > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.product-sidebar {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 @media (min-width: 1024px) {
   .product-sidebar {
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 0.25rem;
-    align-self: flex-start;
+    grid-column: 9/13;
   }
 }
-.product-sidebar .product-price {
+.product-sidebar .label {
+  background: hsl(268deg, 71%, 45%);
+  color: hsl(0deg, 100%, 100%);
+  display: inline flow-root;
+  padding: 0.125rem 0.75rem;
+  order: 3;
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
+  border-radius: 0.25rem;
+}
+.product-sidebar__price-wrapper {
   display: flex;
-  color: hsl(0deg, 0%, 13%);
-  -webkit-margin-after: 1rem;
-          margin-block-end: 1rem;
+  align-items: center;
+  gap: 1rem;
+  font-variant-numeric: tabular-nums;
 }
-.product-sidebar label[for^=pa_] {
-  display: block;
-  margin: 2rem 0 1rem;
+.product-sidebar__price-wrapper ins,
+.product-sidebar__price-wrapper del {
+  text-decoration: none;
 }
-.product-sidebar select {
-  display: block;
+.product-sidebar__price-wrapper ins {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  order: 1;
+  font-weight: 700;
+}
+.product-sidebar__price-wrapper del {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  order: 2;
+  color: hsl(284deg, 57%, 12%);
+  opacity: 0.5;
 }
 
-.product-add-to-cart {
-  border: 1px solid hsl(163deg, 67%, 48%);
-  background: hsl(163deg, 67%, 48%);
-  color: hsl(0deg, 100%, 100%);
-  padding: 0.5rem;
-  margin: 1rem 0;
-  display: block;
+.alert {
+  background: hsl(47deg, 100%, 68%);
+  border: hsl(284deg, 57%, 12%);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #c29800;
+}
+
+.product-gallery {
+  position: -webkit-sticky;
+  position: sticky;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  top: 3.5rem;
+  grid-column: 1/-1;
+}
+@media (min-width: 1024px) {
+  .product-gallery {
+    grid-column: 1/8;
+  }
+}
+.product-gallery__images {
+  grid-column: span 1 / span 1;
+}
+.product-gallery__images > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.product-gallery__images {
+  overflow: scroll;
+  max-height: 40rem;
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+}
+.product-gallery__images::-webkit-scrollbar {
+  display: none;
+}
+.product-gallery__images img {
+  border-radius: 0.5rem;
+  scroll-snap-align: start;
+  cursor: zoom-in;
+  transition: border-radius 0.2s ease-out;
+}
+.product-gallery__images img:hover {
+  transition: border-radius 0.2s ease-in;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.product-gallery__selected-image {
+  grid-column: span 3 / span 3;
+  border-radius: 0.75rem;
+  height: 40rem;
+}
+.product-gallery img {
+  aspect-ratio: 1 / 1;
 }
 
 .products {
@@ -1254,11 +1322,11 @@ body:not(.page-wishlist) .content > h2, body:not(.page-wishlist) .content h3 {
   margin-right: 0.5rem;
 }
 .pagination .pagination-button:hover {
-  background: rgba(99, 20, 210, 0.45);
+  background: rgba(109, 33, 196, 0.45);
   color: hsl(0deg, 0%, 13%);
 }
 .pagination .pagination-button.current {
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
 }
 .pagination .pagination-button.next, .pagination .pagination-button.prev {
@@ -1427,7 +1495,7 @@ form.cart-form .actions {
 }
 .woocommerce-form-login .woocommerce-button,
 .woocommerce-form-register .woocommerce-button {
-  background: hsl(265deg, 83%, 45%);
+  background: hsl(268deg, 71%, 45%);
   color: hsl(0deg, 100%, 100%);
   width: 100%;
 }

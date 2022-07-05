@@ -1,0 +1,30 @@
+<aside class="product-sidebar">
+	<header class="product-sidebar__price-wrapper">
+		
+		{{ product.get_price_html }}
+		
+		{% if product.is_on_sale %}
+			<label
+					data-aos="zoom-in"
+					data-aos-duration="500"
+					class="label"
+					aria-hidden="true">
+				{{ product.get_sale_price_percentage }}
+			</label>
+		{% endif %}
+	</header>
+	
+	{% if product.should_show_stock and product.is_in_stock %}
+		<div role="alert" class="alert alert--warning alert--flash">
+			{{ __('Nog maar %s op voorraad')|format(product.get_stock_quantity) }}
+		</div>
+	{% endif %}
+	
+	{% if product.get_short_description %}
+		<div class="product-short-description">
+			{{ product.get_short_description }}
+		</div>
+	{% endif %}
+	
+{#	{% do action('bookish/template/single-product/sidebar/add-to-cart') %}#}
+</aside>
