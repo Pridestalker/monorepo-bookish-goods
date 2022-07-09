@@ -43,10 +43,8 @@ class Product extends Post
 
     public function __call($field, $args)
     {
-
-        woocommerce_template_single_add_to_cart();
         try {
-            return call_user_func_array([$this->setProduct(), $field], $args);
+            return call_user_func_array([$this->getProduct(), $field], $args);
         } catch (\Throwable $e) {
             return false;
         }
