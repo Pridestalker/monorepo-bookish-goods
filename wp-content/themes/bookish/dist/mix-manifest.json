@@ -5,10 +5,10 @@
     "/header.js": "/header.js?id=79621ced4939d100",
     "/bookish-header.js": "/bookish-header.js?id=e0496546e7eb7951",
     "/checkout.js": "/checkout.js?id=834832dbea071dd7",
+    "/share.js": "/share.js?id=c95377d6c6e818ee",
+    "/single-product/gallery.js": "/single-product/gallery.js?id=8518f78be887e6ae",
     "/styles/admin.css": "/styles/admin.css",
     "/styles/mail.css": "/styles/mail.css",
     "/styles/main.css": "/styles/main.css",
-    "/scripts/vendor.js": "/scripts/vendor.js",
-    "/share.js": "/share.js?id=c95377d6c6e818ee",
-    "/single-product/gallery.js": "/single-product/gallery.js?id=8518f78be887e6ae"
+    "/scripts/vendor.js": "/scripts/vendor.js"
 }

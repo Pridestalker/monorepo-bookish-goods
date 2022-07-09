@@ -72,6 +72,10 @@ class HookServiceProvider extends ServiceProvider
                 'hook' => 'woocommerce_review_order_before_payment',
                 'callback' => 'woocommerce_checkout_coupon_form',
             ],
+            [
+                'hook' => 'bookish/template/single-product/sidebar/add-to-cart',
+                'callback' => 'woocommerce_template_single_add_to_cart',
+            ],
             OrderStatusPaymentReceived::class,
             PaymentReceivedCustomNotification::class,
             CheckForCouponCookie::class,

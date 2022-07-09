@@ -4,6 +4,8 @@
 .product-sidebar {
   grid-column: 1 / -1;
   padding: 1.5rem;
+  position: sticky;
+  top: 10rem;
   @apply space-y-8;
   @apply rounded-lg;
   @apply bg-white;
@@ -20,7 +22,6 @@
     padding: .125rem .75rem;
     order: 3;
     margin-inline-start: auto;
-
     @apply rounded;
   }
 
@@ -48,12 +49,38 @@
       opacity: 0.5;
     }
   }
+
+  .stock {
+    @apply hidden;
+  }
+
+  .cart {
+    .quantity {
+      @apply col-span-1;
+      @apply hidden;
+    }
+
+    .single_add_to_cart_button {
+      transition: background-color 0.2s ease-out, box-shadow 0.3s ease-out;
+      display: block;
+      background: colors.$primary;
+      color: colors.$white;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+
+      &:hover {
+        transition: background-color 0.2s ease-in, box-shadow 0.3s ease-in;
+        background: sc.adjust(colors.$primary, $lightness: -10%);
+        @apply shadow;
+      }
+    }
+  }
 }
 
 .alert {
-  background: colors.$secondary;
-  border: colors.$dark;
+  background: sc.adjust(colors.$secondary, $lightness: 20%);
   padding: .5rem 1.25rem;
   @apply rounded;
-  border: 1px solid darken(colors.$secondary, 30%);
+  border: 1px solid sc.adjust(colors.$secondary, $lightness: -30%);
 }
