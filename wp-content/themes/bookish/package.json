@@ -12,6 +12,7 @@
     "@fullhuman/postcss-purgecss": "^4.1.3",
     "@material-ui/core": "^4.12.4",
     "@webreact/webreactor": "^1.0.2",
+    "container-query-polyfill": "^0.1.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",

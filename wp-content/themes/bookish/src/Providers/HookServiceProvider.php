@@ -12,6 +12,7 @@ use App\Controllers\Hooks\Actions\Layouts\InjectHeader;
 use App\Controllers\Hooks\Actions\Layouts\InjectMiniCart;
 use App\Controllers\Hooks\Actions\Layouts\InjectNavigation;
 use App\Controllers\Hooks\Actions\Layouts\InjectSearchForm;
+use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductContent;
 use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductGallery;
 use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductHeader;
 use App\Controllers\Hooks\Actions\Layouts\Product\InjectProductSidebar;
@@ -90,6 +91,7 @@ class HookServiceProvider extends ServiceProvider
             InjectProductHeader::class,
             InjectProductGallery::class,
             InjectProductSidebar::class,
+            InjectProductContent::class,
         ]);
 
         $this->filters_unhook = apply_filters('bookish/providers/filters/unhook', []);

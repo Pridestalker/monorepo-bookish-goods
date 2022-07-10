@@ -1,0 +1,21 @@
+<div class="product-description">
+	{{ product.content }}
+</div>
+
+<div class="related-products">
+	<h2 class="related-products__title">{{ __('Vergelijkbare producten', 'bookish') }}</h2>
+	
+	{% for related in product.related_products %}
+		{% do action('bookish/template/product-card', related) %}
+	{% endfor %}
+</div>
+
+{% if product.get_type is same as('set') %}
+	<div class="related-products related-products--children">
+		<h2 class="related-products__title animated-title">{{ __('In deze set', 'bookish') }}</h2>
+		
+		{% for product in product.get_child_products %}
+			{% do action('bookish/template/product-card', Product(product)) %}
+		{% endfor %}
+	</div>
+{% endif %}

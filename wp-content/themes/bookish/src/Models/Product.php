@@ -270,7 +270,7 @@ class Product extends Post
     public function related_products(): array
     {
         if (!isset(static::$related_cache[$this->id])) {
-            static::$related_cache[$this->id] = wc_get_related_products($this->id, 3);
+            static::$related_cache[$this->id] = wc_get_related_products($this->id, 4);
         }
 
         $query = new \WP_Query([

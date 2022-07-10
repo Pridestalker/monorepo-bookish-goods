@@ -2,10 +2,8 @@
 @use 'assets/styles/abstracts/variables/colors';
 
 .product-gallery {
-  position: sticky;
   display: grid;
   @apply grid-cols-4 gap-4;
-  top: 3.5rem;
   grid-column: 1 / -1;
 
   @screen lg {

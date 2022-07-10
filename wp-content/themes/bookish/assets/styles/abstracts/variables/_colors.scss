@@ -1,16 +1,31 @@
 $white: hsl(0, 100%, 100%) !default;
 $black: hsl(0, 0%, 13%) !default;
 $dark: hsl(284, 57%, 12%) !default;
-$gray: hsl(0, 0%, 89%) !default;
+$gray: hsl(0, 0%, 95%) !default;
 $green: hsl(163, 67%, 48%) !default;
 $red: hsl(357, 100%, 55%) !default;
-$yellow: hsl(47, 100%, 68%) !default;
-$purple: hsl(268, 71%, 45%) !default;
 
-$primary: $purple !default;
+// Set of purple colors. (Primary variants)
+$purple-10: hsl(268, 75%, 65%) !default;
+$purple-20: hsl(268, 67%, 55%) !default;
+$purple-30: hsl(268, 71%, 45%) !default;
+$purple-40: hsl(268, 74%, 35%) !default;
+$purple-50: hsl(268, 78%, 30%) !default;
+$purple: $purple-30 !default;
+
+// Set of yellow colors. (Secondary variants)
+$yellow-10: hsl(47, 95%, 85%) !default;
+$yellow-20: hsl(47, 100%, 75%) !default;
+$yellow-30: hsl(47, 100%, 68%) !default;
+$yellow-40: hsl(48, 100%, 60%) !default;
+$yellow-50: hsl(47, 100%, 50%) !default;
+$yellow: $yellow-30 !default;
+
+
+$primary: $purple-30 !default;
 $primary-invert: $white !default;
 
-$secondary: $yellow !default;
+$secondary: $yellow-30 !default;
 $secondary-invert: $black !default;
 
 $colors: (
@@ -18,11 +33,23 @@ $colors: (
         'black': ($black, $white),
         'dark': ($dark, $white),
         'gray': ($gray, $black),
-        'green': ($green ,$black),
-        'yellow': ($yellow, $black),
+        'green': ($green, $black),
+        'yellow': ($yellow-30, $black),
         'red': ($red, $black),
-        'purple': ($purple, $white),
+        'purple': ($purple-30, $white),
+        'purple-10': ($purple-10, $white),
+        'purple-20': ($purple-20, $white),
+        'purple-30': ($purple-30, $white),
+        'purple-40': ($purple-40, $white),
+        'purple-50': ($purple-50, $white),
+        'yellow-10': ($yellow-10, $black),
+        'yellow-20': ($yellow-20, $black),
+        'yellow-30': ($yellow-30, $black),
+        'yellow-40': ($yellow-40, $black),
+        'yellow-50': ($yellow-50, $black),
 ) !default;
+
+
 $theme-colors: (
         'primary': ($primary, $primary-invert),
         'secondary': ($secondary, $secondary-invert)

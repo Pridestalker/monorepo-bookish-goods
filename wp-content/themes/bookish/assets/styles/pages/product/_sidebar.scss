@@ -1,5 +1,6 @@
 @use 'sass:color' as sc;
 @use 'assets/styles/abstracts/variables/colors';
+@use 'assets/styles/abstracts/functions';
 
 .product-sidebar {
   grid-column: 1 / -1;
@@ -8,20 +9,22 @@
   top: 10rem;
   @apply space-y-8;
   @apply rounded-lg;
-  @apply bg-white;
-  @apply shadow;
+  @apply shadow-xl;
+  background: colors.$white;
 
   @screen lg {
     grid-column: 9 / 13;
   }
 
   .label {
-    background: colors.$primary;
-    color: colors.$white;
+    background: functions.theme-color('purple-10');
+    border: 1px solid functions.theme-color('purple-30');
+    color: functions.theme-color('white');
     display: inline flow-root;
     padding: .125rem .75rem;
     order: 3;
     margin-inline-start: auto;
+    font-weight: 400;
     @apply rounded;
   }
 
@@ -30,6 +33,8 @@
     align-items: center;
     gap: 1rem;
     font-variant-numeric: tabular-nums;
+    @apply text-2xl;
+    font-weight: 700;
 
     ins,
     del {
@@ -37,9 +42,7 @@
     }
 
     ins {
-      @apply text-2xl;
       order: 1;
-      font-weight: 700;
     }
 
     del {
@@ -47,7 +50,12 @@
       order: 2;
       color: colors.$dark;
       opacity: 0.5;
+      font-weight: 400;
+      text-decoration: line-through;
     }
+  }
+
+  &__stock {
   }
 
   .stock {
@@ -61,26 +69,18 @@
     }
 
     .single_add_to_cart_button {
-      transition: background-color 0.2s ease-out, box-shadow 0.3s ease-out;
+      transition: background-color 0.2s ease-out, color 0.3s ease-out;
       display: block;
-      background: colors.$primary;
-      color: colors.$white;
+      background: functions.theme-color('green');
+      color: functions.theme-color('green', 1);
       width: 100%;
       border: none;
-      box-shadow: none;
 
       &:hover {
-        transition: background-color 0.2s ease-in, box-shadow 0.3s ease-in;
-        background: sc.adjust(colors.$primary, $lightness: -10%);
-        @apply shadow;
+        transition: background-color 0.2s ease-in, color 0.3s ease-in;
+        background: sc.adjust(functions.theme-color('green'), $lightness: -10%);
+        color: functions.theme-color('white');
       }
     }
   }
-}
-
-.alert {
-  background: sc.adjust(colors.$secondary, $lightness: 20%);
-  padding: .5rem 1.25rem;
-  @apply rounded;
-  border: 1px solid sc.adjust(colors.$secondary, $lightness: -30%);
 }

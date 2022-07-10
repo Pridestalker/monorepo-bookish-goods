@@ -1,0 +1,22 @@
+@use "assets/styles/abstracts/variables" as v;
+
+.woocommerce-notices-wrapper {
+  @apply container mt-14;
+
+  .woocommerce-message {
+    background: v.$yellow-10;
+    color: v.$dark;
+    border: 1px solid v.$yellow-30;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    @apply rounded-lg;
+    @apply lg:items-center gap-4;
+
+    a {
+      padding: 0;
+    }
+  }
+}

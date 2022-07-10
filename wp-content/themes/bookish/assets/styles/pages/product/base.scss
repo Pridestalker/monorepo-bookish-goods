@@ -7,3 +7,13 @@
   @apply gap-5 md:gap-6 xl:gap-8;
   place-items: flex-start stretch;
 }
+
+.product-description {
+  @apply col-span-7;
+  @apply prose-headings:mb-2 prose-headings:mt-4;
+  @apply prose-p:mt-2;
+  @apply prose-p:empty:mt-0;
+  @apply prose-a:underline prose-a:text-blue-500;
+
+  @apply prose-ul:list-disc prose-ul:pl-3;
+}

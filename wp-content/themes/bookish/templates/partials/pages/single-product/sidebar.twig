@@ -14,15 +14,13 @@
 		{% endif %}
 	</header>
 	
-	{% if product.should_show_stock and product.is_in_stock %}
-		<div role="alert" class="alert alert--warning alert--flash">
-			{{ __('Nog maar %s op voorraad')|format(product.get_stock_quantity) }}
-		</div>
-	{% endif %}
+	<div class="product-short-description">
+		{% do fn('the_excerpt') %}
+	</div>
 	
-	{% if product.get_short_description %}
-		<div class="product-short-description">
-			{{ product.get_short_description }}
+	{% if product.should_show_stock and product.is_in_stock %}
+		<div role="alert" class="product-sidebar__stock product-sidebar__stock--low">
+			{{ __('Nog maar %s op voorraad')|format(product.get_stock_quantity) }}
 		</div>
 	{% endif %}
 	

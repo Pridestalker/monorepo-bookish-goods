@@ -42,3 +42,30 @@ label,
   font-weight: bold;
   text-transform: uppercase;
 }
+
+@keyframes animated-background {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  25%, 75% {
+    background-position: 400% 400%;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+}
+
+.animated-title {
+  display: block;
+  max-width: max-content;
+  background: v.$purple-10;
+  background: radial-gradient(circle, v.$purple-10 0%, v.$purple-50 100%);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  user-select: all;
+  animation: animated-background 60s ease-in-out infinite;
+}

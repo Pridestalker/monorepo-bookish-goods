@@ -2,6 +2,8 @@
 
 namespace App\Controllers\TwigFunctions;
 
+use App\Models\Product;
+
 defined('ABSPATH') || exit(0);
 
 class WooCommerceGeneral
@@ -34,6 +36,11 @@ class WooCommerceGeneral
 
     public static function getFavoritesUrl(): string
     {
-    	return static::getUrl('myaccount') . 'wishlist';
+        return static::getUrl('myaccount') . 'wishlist';
+    }
+
+    public static function makeProduct(mixed $pid): Product
+    {
+        return new Product($pid);
     }
 }

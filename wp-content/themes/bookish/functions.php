@@ -15,3 +15,7 @@ setlocale(LC_TIME, 'nl');
 Timber::$locations = [
     get_stylesheet_directory() . '/templates/',
 ];
+
+add_filter('excerpt_more', fn () => '');
+
+add_filter('woocommerce_product_single_add_to_cart_text', fn () => __('In mijn winkelmandje', 'bookish'));
